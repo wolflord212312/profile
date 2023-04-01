@@ -17,7 +17,7 @@ const config = {
     PROJECTS: [
         { id: "project-1", image: "https://cdn.discordapp.com/icons/1049145897390452806/5043ca06aba91d58c64b9d467fcb7d90.png?size=4096", link: "https://discord.gg/rZJXzgStFj", name: "WKND-MC" },
         { id: "project-2", image: "assets/img/placeholder2.png", link: "https://discord.gg/jv6qa33SBb", name: "Oynx-Reforged" },
-        { id: "project-3", image: "assets/img/placeholder3.png", link: "https://discord.gg/reforgedmc", name: "Reforged-Network" },
+        { id: "project-3", image: "https://cdn.discordapp.com/icons/203219387627470849/a_e0e262d138d2050f2386ef2859719c8e.gif?size=4096", link: "https://discord.gg/reforgedmc", name: "Reforged-Network" },
     ],
 
     SOCIALS: [

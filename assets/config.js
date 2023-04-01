@@ -5,14 +5,14 @@ const config = {
      * This can either be a file link (relative or external)
      * or a Gravatar email or hash.
      */
-    PICTURE: "https://github.com/wolflord212312/profile/blob/38e1364096640007e0d001ba68be8de77ef70725/assets/img/profile.png",
+    PICTURE: "assets/img/profile.png",
 
     DESCRIPTION: "Just a Average Gamer Bro!",
 
     BADGES: [
-        { id: "HypeSquad Bravery", image: "assets/img/hypesquad_bravery.svg" },
+        { id: "HypeSquad brilliance", image: "assets/img/9554-hypesquad-brilliance.png" },
         { id: "Nitro Sub", image: "assets/img/nitro_sub.svg" },
-        { id: "Active Developer", image: "https://github.com/wolflord212312/profile/blob/2a5043955308bfe61509f644900c82768bbcc06a/assets/img/developerbadge.png" },
+        { id: "Active Developer", image: "assets/img/developerbadge.png" },
     ],
 
     PROJECTS: [

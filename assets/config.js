@@ -15,14 +15,13 @@ const config = {
     ],
 
     PROJECTS: [
-        { id: "project-1", image: "assets/img/placeholder1.png", link: "https://discord.com", name: "Super cool project 1" },
-        { id: "project-2", image: "assets/img/placeholder2.png", link: "https://discord.com", name: "Super cool project 2" },
-        { id: "project-3", image: "assets/img/placeholder3.png", link: "https://discord.com", name: "Super cool project 3" },
+        { id: "project-1", image: "https://cdn.discordapp.com/icons/1049145897390452806/5043ca06aba91d58c64b9d467fcb7d90.png?size=4096", link: "https://discord.gg/rZJXzgStFj", name: "WKND-MC" },
+        { id: "project-2", image: "assets/img/placeholder2.png", link: "https://discord.gg/jv6qa33SBb", name: "Oynx-Reforged" },
+        { id: "project-3", image: "assets/img/placeholder3.png", link: "https://discord.gg/reforgedmc", name: "Reforged-Network" },
     ],
 
     SOCIALS: [
-        { class_name: "fab fa-github", link: "https://github.com/discord" },
-        { class_name: "fab fa-twitter", link: "https://twitter.com/discord" },
+        { class_name: "fab fa-github", link: "https://github.com/wolflord212312" },
     ],
 
 }

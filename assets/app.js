@@ -16,6 +16,7 @@ let body = new Vue({
         description: config.DESCRIPTION,
         projects: config.PROJECTS,
         socials: config.SOCIALS,
+        gigeco: config.ECO,
     }
 });
 

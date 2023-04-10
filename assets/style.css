@@ -157,7 +157,7 @@ hr {
 @media (max-width: 600px) { 
 
     body {
-        overflow-y: scroll !important;
+        overflow-y: auto !important;
     }
 
     .box.profile {

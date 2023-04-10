@@ -25,5 +25,8 @@ const config = {
     SOCIALS: [
         { class_name: "fab fa-github", link: "https://github.com/wolflord212312" },
     ],
-
+    
+    ECO:[
+        { id: "eco-1", image: "Test", link: "Test", name: "Test" },
+    ],
 }

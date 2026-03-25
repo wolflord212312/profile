@@ -1,53 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="vue-managed">{{ username }}</title>
-    <!-- Import Font Awesome Icon Kit -->
-    <script src="https://kit.fontawesome.com/6e5392ed44.js" crossorigin="anonymous"></script>
-    <!-- Import Vue.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <!-- Import Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.css">
-    <!-- Import Custom CSS -->
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DjJewl ✦ Cactus Bunny Chaos</title>
+  <link rel="icon" href="https://via.placeholder.com/32/ffc0cb/000000?text=🌵🐰" /> <!-- swap with your icon -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&family=Comic+Neue:wght@400;700&family=Orbitron:wght@500&display=swap');
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2a1a3d, #4b2e5f, #6b3f7f);
+      color: #f0c0ff;
+      font-family: 'Comic Neue', cursive;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=800') center/cover no-repeat;
+      opacity: 0.15;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .banner {
+      position: relative;
+      height: 300px;
+      border-radius: 25px 25px 0 0;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .pfp {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid #ff9ec1;
+      box-shadow: 0 0 30px #c79bff, inset 0 0 20px #000;
+      object-fit: cover;
+      background: #2a1a3d;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 210px;
+      z-index: 3;
+    }
+
+    .pfp::before {
+      content: '🌵🍆';
+      position: absolute;
+      bottom: -10px; right: -10px;
+      font-size: 2rem;
+      background: #ff69b4;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #ff69b4;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 4rem;
+      color: #ff9ec1;
+      text-shadow: 0 0 20px #c79bff, 3px 3px 0 #000;
+      margin: 1rem 0;
+      letter-spacing: 4px;
+    }
+
+    .pronouns {
+      font-size: 1.4rem;
+      color: #d7aaff;
+      margin: 0.5rem 0;
+    }
+
+    .status {
+      font-size: 1.2rem;
+      color: #ffb6c1;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .emojis {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .links, .best-friends {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .link-btn {
+      background: linear-gradient(45deg, #ff69b4, #c79bff);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(255,105,180,0.4);
+      transition: all 0.3s;
+      border: 3px solid #ffb6c1;
+    }
+
+    .link-btn:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 15px 30px rgba(199,155,255,0.6);
+    }
+
+    .note {
+      font-size: 1rem;
+      color: #d7aaff;
+      opacity: 0.8;
+      margin-top: 3rem;
+      font-style: italic;
+    }
+
+    .glitch {
+      position: relative;
+      animation: glitch 4s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
+      2% { text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; }
+      4% { text-shadow: 0; }
+      100% { text-shadow: 0; }
+    }
+
+    .main-panel {
+      background: rgba(40, 40, 40, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 100px 2rem 3rem;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Best Friends Section */
+    .best-friends {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .best-friends h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #ff9ec1;
+      text-shadow: 0 0 15px #c79bff;
+      margin-bottom: 1.5rem;
+    }
+
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .friend-card {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .friend-card:hover {
+      transform: scale(1.08);
+    }
+
+    .friend-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #ff69b4;
+      box-shadow: 0 0 20px rgba(255,105,180,0.5);
+      object-fit: cover;
+      background: #2a1a3d;
+      margin-bottom: 0.8rem;
+    }
+
+    .friend-name {
+      font-size: 1.1rem;
+      color: #ffb6c1;
+      text-decoration: none;
+    }
+
+    .friend-name:hover {
+      color: #ff9ec1;
+      text-shadow: 0 0 10px #ff69b4;
+    }
+  </style>
 </head>
 <body>
-    <div class="box profile">
-        <div class="top-part">
-            <img class="profile-picture" v-bind:src="profile_picture" alt="Profile Picture" />
-            <p class="name">{{ username }}</p>
-            <ul class="badges">
-                <li v-for="badge in badges"><img v-bind:src="badge.image" v-bind:alt="badge.id" /></li>
-            </ul>
-        </div>
-        <div class="middle-part">
-        <div class="bio">
-            <p v-html="description"></p>
-        </div>
-        <hr>
-        <div class="projects">
-            <h1>Communitys and projects:</h1>
-            <a v-for="project in projects" class="project-box" v-bind:href="project.link" target="_blank" v-bind:id="project.id">
-                <img v-bind:src="project.image" v-bind:alt="project.name" />
-                <p>{{ project.name }}</p>
-            </a>
-        </div>
-        </div>
-        <div class="bottom-part">
-            <ul class="social">
-                <li v-for="social in socials"><a v-bind:class="social.class_name" v-bind:href="social.link" target="_blank"></a></li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="banner">
+      <img src="banner.webp" alt="Banner">
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-    <script src="./assets/config.js"></script>
-    <script src="./assets/app.js"></script>
+    <img src="pfp.webp" alt="DjJewl PFP" class="pfp" />
 
+    <div class="main-panel">
+      <h1 class="glitch">DjJewl</h1>
+
+      <div class="pronouns">
+        she/her/him/he/them/it/🌵
+      </div>
+
+      <div class="emojis">🌈 ADHD ⚡ BiPolar 🧠 Anxiety 📉 Memory 404</div>
+
+      <div class="status">
+        Furry || hyperfocus & care too much.<br>
+        If I vanish, it's just my brain panicking 🌪️💜
+      </div>
+
+      <!-- Best Friends Section -->
+      <div class="best-friends">
+        <h2>Best Friends</h2>
+        <div class="friends-grid">
+          <!-- Example friend with link -->
+          <div class="friend-card">
+              <img src="https://avatar-cyan.vercel.app/api/pfp/399140060630482944/image" alt="ItzKanna" class="friend-avatar">
+              <div class="friend-name">ItzKanna</div>
+          </div>
+          <div class="friend-card">
+              <img src="https://avatar-cyan.vercel.app/api/pfp/450363067046428675/image" alt="Kade" class="friend-avatar">
+              <div class="friend-name">Kade</div>
+          </div>
+          <div class="friend-card">
+            <a href="https://steamcommunity.com/id/gears97/" target="_blank">
+              <img src="https://avatar-cyan.vercel.app/api/pfp/307122349797539840/image" alt="Gears" class="friend-avatar">
+              <div class="friend-name">Gears</div>
+            </a>
+          </div>
+          <div class="friend-card">
+            <a href="https://x.com/AriyaliaWiccan" target="_blank">
+              <img src="https://avatar-cyan.vercel.app/api/pfp/460901042851414017/image" alt="Ariyalia" class="friend-avatar">
+              <div class="friend-name">Ariyalia</div>
+            </a>
+          </div>
+      </div>
+
+      <div class="links">
+        <a href="https://x.com/wolf12389396209" class="link-btn">X / Twitter</a>
+        <a href="https://vrchat.com/home/user/usr_3d3f202b-b964-4c67-8315-facbbde8a5ff" class="link-btn">VrChat</a> 
+        <a href="https://www.youtube.com/@djjewl9837" class="link-btn">Youtube</a>
+        <a href="https://throne.com/djuwu" class="link-btn">Throne</a>
+      </div>
+
+      <div class="note">
+        Preview mode activated... or is it real?
+      </div>
+    </div>
+  </div>
 </body>
 </html>
